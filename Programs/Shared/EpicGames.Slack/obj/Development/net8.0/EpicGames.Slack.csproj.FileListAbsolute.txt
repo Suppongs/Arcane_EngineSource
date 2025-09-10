@@ -1,0 +1,10 @@
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\bin\Development\net8.0\EpicGames.Slack.deps.json
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\bin\Development\net8.0\EpicGames.Slack.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\bin\Development\net8.0\EpicGames.Slack.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\EpicGames.Slack.csproj.AssemblyReference.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\EpicGames.Slack.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\EpicGames.Slack.csproj.CoreCompileInputs.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\EpicGames.Slack.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\refint\EpicGames.Slack.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\EpicGames.Slack.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Slack\obj\Development\net8.0\ref\EpicGames.Slack.dll

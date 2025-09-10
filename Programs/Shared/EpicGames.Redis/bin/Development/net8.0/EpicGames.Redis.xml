@@ -1,0 +1,1612 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EpicGames.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:EpicGames.Redis.Converters.RedisClassConverter`1">
+            <summary>
+            Converter for records to Redis values.
+            </summary>
+            <typeparam name="T">The record type</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisClassConverter`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisClassConverter`1.ToRedisValue(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisClassConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.Converters.RedisProtobufConverter`1">
+            <summary>
+            Converter for records to Redis values using protobuf serialization.
+            </summary>
+            <typeparam name="T">The record type</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisProtobufConverter`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisProtobufConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisProtobufConverter`1.ToRedisValue(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.Converters.RedisProtobufNetConverter`1">
+            <summary>
+            Converter for records to Redis values using ProtoBuf-Net annotations.
+            </summary>
+            <typeparam name="T">The record type</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisProtobufNetConverter`1.ToRedisValue(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Converters.RedisProtobufNetConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.IRedisTypedKey">
+            <summary>
+            Interface for typed redis keys
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.IRedisTypedKey.Inner">
+            <summary>
+            The inner untyped key
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisTypedKeyExtensions">
+            <summary>
+            Extension methods for <see cref="T:EpicGames.Redis.IRedisTypedKey"/>
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyExists(EpicGames.Redis.IRedisTypedKey)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.KeyExists(StackExchange.Redis.RedisKey)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyNotExists(EpicGames.Redis.IRedisTypedKey)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.KeyExists(StackExchange.Redis.RedisKey)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyDeleteAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.IRedisTypedKey,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyDeleteAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.IRedisTypedKey[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyDeleteAsync(StackExchange.Redis.RedisKey[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyExistsAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.IRedisTypedKey,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyExistsAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyExistsAsync(StackExchange.Redis.IDatabaseAsync,System.Collections.Generic.IEnumerable{EpicGames.Redis.IRedisTypedKey},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyExistsAsync(StackExchange.Redis.RedisKey[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyExpireAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.IRedisTypedKey,System.Nullable{System.DateTime},StackExchange.Redis.ExpireWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyExpireAsync(StackExchange.Redis.RedisKey,System.Nullable{System.DateTime},StackExchange.Redis.ExpireWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisTypedKeyExtensions.KeyExpireAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.IRedisTypedKey,System.Nullable{System.TimeSpan},StackExchange.Redis.ExpireWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.KeyExpireAsync(StackExchange.Redis.RedisKey,System.Nullable{System.TimeSpan},StackExchange.Redis.ExpireWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisChannel`1">
+            <summary>
+            Represents a typed pub/sub channel with a particular value
+            </summary>
+            <typeparam name="T">The type of element stored in the channel</typeparam>
+        </member>
+        <member name="P:EpicGames.Redis.RedisChannel`1.Channel">
+            <summary>
+            The key for the list
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.#ctor(StackExchange.Redis.RedisChannel)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="channel"></param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.#ctor(EpicGames.Core.Utf8String,StackExchange.Redis.RedisChannel.PatternMode)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">The channel name</param>
+            <param name="mode">Pattern mode</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.#ctor(System.String,StackExchange.Redis.RedisChannel.PatternMode)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">The channel name</param>
+            <param name="mode">Pattern mode</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.#ctor(System.Byte[],StackExchange.Redis.RedisChannel.PatternMode)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">The channel name</param>
+            <param name="mode">Pattern mode</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.Equals(EpicGames.Redis.RedisChannel{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.op_Equality(EpicGames.Redis.RedisChannel{`0},EpicGames.Redis.RedisChannel{`0})">
+            <summary>Compares two instances for equality</summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.op_Inequality(EpicGames.Redis.RedisChannel{`0},EpicGames.Redis.RedisChannel{`0})">
+            <summary>Compares two instances for equality</summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.op_Implicit(EpicGames.Core.Utf8String)~EpicGames.Redis.RedisChannel{`0}">
+            <summary>
+            Create a channel name from a <see cref="T:EpicGames.Core.Utf8String"/>.
+            </summary>
+            <param name="key">The string to get a channel from.</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.op_Implicit(System.String)~EpicGames.Redis.RedisChannel{`0}">
+            <summary>
+            Create a channel name from a byte array.
+            </summary>
+            <param name="key">The byte array to get a channel from.</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannel`1.op_Implicit(System.Byte[])~EpicGames.Redis.RedisChannel{`0}">
+            <summary>
+            Create a channel name from a byte array.
+            </summary>
+            <param name="key">The byte array to get a channel from.</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisChannelExtensions">
+            <summary>
+            Extension methods for channels
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisChannelExtensions.PublishAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisChannel{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.PublishAsync(StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisConnectionPool">
+             <summary>
+             A connection pool for Redis client
+            
+             Wraps multiple ConnectionMultiplexers as lazy values and initializes them as needed.
+             If full, the least loaded connection will be picked.
+             </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisConnectionPool.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="poolSize">Size of the pool (i.e max number of connections)</param>
+            <param name="redisConfString">Configuration string for Redis</param>
+            <param name="defaultDatabaseIndex">The Redis database index to use. Use -1 for the default one</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisConnectionPool.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisConnectionPool.GetConnection">
+             <summary>
+             Get a connection from the pool
+            
+             It will pick the least loaded connection or create a new one (if pool size allows)
+             </summary>
+             <returns>A Redis database connection</returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisConnectionPool.GetDatabase">
+            <summary>
+            Shortcut to getting a IDatabase
+            </summary>
+            <returns>A Redis database</returns>
+        </member>
+        <member name="T:EpicGames.Redis.RedisExtensions">
+            <summary>
+            Extension methods for Redis
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisExtensions.AsKey(StackExchange.Redis.RedisValue)">
+            <summary>
+            Convert a RedisValue to a RedisKey
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisExtensions.AsValue(StackExchange.Redis.RedisKey)">
+            <summary>
+            Convert a RedisKey to a RedisValue
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHash`1">
+            <summary>
+            Redis hash, with members corresponding to the property names of a type
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHash`1.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{`0})">
+            <summary>
+            Redis hash, with members corresponding to the property names of a type
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHash`2">
+            <summary>
+            Redis hash, with members of the given key and value types
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHash`2.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{`0,`1})">
+            <summary>
+            Redis hash, with members of the given key and value types
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHashExtensions">
+            <summary>
+            Extension methods for hashes
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashEqual``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashEqual``2(EpicGames.Redis.RedisHash{``0,``1},``0,``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashExists``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashExists``2(EpicGames.Redis.RedisHash{``0,``1},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashLengthEqual``2(EpicGames.Redis.RedisHash{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashLengthGreaterThan``2(EpicGames.Redis.RedisHash{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashLengthLessThan``2(EpicGames.Redis.RedisHash{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashNotExists``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashNotExists``2(EpicGames.Redis.RedisHash{``0,``1},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashNotEqual``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.HashNotEqual``2(EpicGames.Redis.RedisHash{``0,``1},``0,``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DecrementAsync``1(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DecrementAsync``1(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DecrementAsync``1(EpicGames.Redis.RedisHash{``0,System.Int64},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DecrementAsync``1(EpicGames.Redis.RedisHash{``0,System.Double},``0,System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DeleteAsync``1(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DeleteAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.DeleteAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.ExistsAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashExistsAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.GetAsync``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.GetAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.GetAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.GetAllAsync``2(EpicGames.Redis.RedisHash{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAllAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.IncrementAsync``1(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.IncrementAsync``1(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.IncrementAsync``1(EpicGames.Redis.RedisHash{``0,System.Int64},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.IncrementAsync``1(EpicGames.Redis.RedisHash{``0,System.Double},``0,System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.KeysAsync``2(EpicGames.Redis.RedisHash{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.LengthAsync``2(EpicGames.Redis.RedisHash{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.ScanAsync``2(EpicGames.Redis.RedisHash{``0,``1},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.SetAsync``2(EpicGames.Redis.RedisHash{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.SetAsync``2(EpicGames.Redis.RedisHash{``0,``1},``0,``1,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.SetAsync``2(EpicGames.Redis.RedisHash{``0,``1},System.Collections.Generic.IEnumerable{EpicGames.Redis.HashEntry{``0,``1}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.HashEntry[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashExtensions.ValuesAsync``2(EpicGames.Redis.RedisHash{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashValuesAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHashKey`1">
+            <summary>
+            Represents a redis hash key, with members corresponding to the property names of a type
+            </summary>
+            <typeparam name="T">Type of the hash fields</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKey`1.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a redis hash key, with members corresponding to the property names of a type
+            </summary>
+            <typeparam name="T">Type of the hash fields</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKey`1.op_Implicit(System.String)~EpicGames.Redis.RedisHashKey{`0}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHashKey`2">
+            <summary>
+            Represents a typed Redis hash with given key/value types
+            </summary>
+            <typeparam name="TName">Type of the hash key</typeparam>
+            <typeparam name="TValue">Type of the hash value</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKey`2.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a typed Redis hash with given key/value types
+            </summary>
+            <typeparam name="TName">Type of the hash key</typeparam>
+            <typeparam name="TValue">Type of the hash value</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKey`2.op_Implicit(System.String)~EpicGames.Redis.RedisHashKey{`0,`1}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.HashEntry`2">
+            <inheritdoc cref="T:StackExchange.Redis.HashEntry"/>
+        </member>
+        <member name="P:EpicGames.Redis.HashEntry`2.Name">
+            <inheritdoc cref="P:StackExchange.Redis.HashEntry.Name"/>
+        </member>
+        <member name="P:EpicGames.Redis.HashEntry`2.Value">
+            <inheritdoc cref="P:StackExchange.Redis.HashEntry.Value"/>
+        </member>
+        <member name="M:EpicGames.Redis.HashEntry`2.#ctor(`0,`1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EpicGames.Redis.HashEntry`2.Deconstruct(`0@,`1@)">
+            <summary>
+            Deconstructor helper method
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.HashEntry`2.op_Implicit(EpicGames.Redis.HashEntry{`0,`1})~StackExchange.Redis.HashEntry">
+            <summary>
+            Implicit conversion to a <see cref="T:StackExchange.Redis.HashEntry"/>
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:EpicGames.Redis.HashEntry`2.op_Implicit(EpicGames.Redis.HashEntry{`0,`1})~System.Collections.Generic.KeyValuePair{`0,`1}">
+            <summary>
+            Implicit conversion to a <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisHashKeyExtensions">
+            <summary>
+            Extension methods for hashes
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.ToDictionaryAsync``2(System.Threading.Tasks.Task{EpicGames.Redis.HashEntry{``0,``1}[]})">
+            <summary>
+            Helper method to convert an array of hash entries into a dictionary
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.ToDictionaryAsync``2(System.Threading.Tasks.Task{EpicGames.Redis.HashEntry{``0,``1}[]},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Helper method to convert an array of hash entries into a dictionary
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashEqual``2(EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashEqual``2(EpicGames.Redis.RedisHashKey{``0,``1},``0,``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashExists``2(EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashExists``2(EpicGames.Redis.RedisHashKey{``0,``1},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashLengthEqual``2(EpicGames.Redis.RedisHashKey{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashLengthGreaterThan``2(EpicGames.Redis.RedisHashKey{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashLengthLessThan``2(EpicGames.Redis.RedisHashKey{``0,``1},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashNotExists``2(EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashNotExists``2(EpicGames.Redis.RedisHashKey{``0,``1},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashNotEqual``2(EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashNotEqual``2(EpicGames.Redis.RedisHashKey{``0,``1},``0,``1)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.HashNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDecrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDecrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDecrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,System.Int64},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDecrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,System.Double},``0,System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDecrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDeleteAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDeleteAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashDeleteAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashDeleteAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashExistsAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashExistsAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAllAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAllAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashGetAllAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashGetAllAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashIncrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashIncrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashIncrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,System.Int64},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashIncrementAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,System.Double},``0,System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashIncrementAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashKeysAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashKeysAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashLengthAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashScanAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashSetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashSetAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.HashEntry[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashSetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},``0,``1,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashSetAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},System.Collections.Generic.IEnumerable{EpicGames.Redis.HashEntry{``0,``1}},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.HashEntry[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisHashKeyExtensions.HashValuesAsync``2(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisHashKey{``0,``1},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.HashValuesAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisList`1">
+            <summary>
+            Represents a typed Redis list with a given key
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisList`1.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{`0})">
+            <summary>
+            Represents a typed Redis list with a given key
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisListExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListIndexEqual``1(EpicGames.Redis.RedisList{``0},System.Int64,``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexEqual(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListIndexExists``1(EpicGames.Redis.RedisList{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexExists(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListIndexNotEqual``1(EpicGames.Redis.RedisList{``0},System.Int64,``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexNotEqual(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListIndexNotExists``1(EpicGames.Redis.RedisList{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexNotExists(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListLengthEqual``1(EpicGames.Redis.RedisList{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListLengthGreaterThan``1(EpicGames.Redis.RedisList{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.ListLengthLessThan``1(EpicGames.Redis.RedisList{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.GetByIndexAsync``1(EpicGames.Redis.RedisList{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListGetByIndexAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.InsertAfterAsync``1(EpicGames.Redis.RedisList{``0},``0,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListInsertAfterAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.InsertBeforeAsync``1(EpicGames.Redis.RedisList{``0},``0,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListInsertBeforeAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.LeftPopAsync``1(EpicGames.Redis.RedisList{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.LeftPushAsync``1(EpicGames.Redis.RedisList{``0},``0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.LeftPushAsync``1(EpicGames.Redis.RedisList{``0},``0[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.LengthAsync``1(EpicGames.Redis.RedisList{``0})">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.RangeAsync``1(EpicGames.Redis.RedisList{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRangeAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.RemoveAsync``1(EpicGames.Redis.RedisList{``0},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.RightPopAsync``1(EpicGames.Redis.RedisList{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.RightPushAsync``1(EpicGames.Redis.RedisList{``0},``0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.RightPushAsync``1(EpicGames.Redis.RedisList{``0},System.Collections.Generic.IEnumerable{``0},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.SetByIndexAsync``1(EpicGames.Redis.RedisList{``0},System.Int64,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListSetByIndexAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListExtensions.TrimAsync``1(EpicGames.Redis.RedisList{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListTrimAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisListKey`1">
+            <summary>
+            Represents a typed Redis list with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKey`1.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a typed Redis list with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKey`1.op_Implicit(System.String)~EpicGames.Redis.RedisListKey{`0}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisListKeyExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListIndexEqual``1(EpicGames.Redis.RedisListKey{``0},System.Int64,``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexEqual(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListIndexExists``1(EpicGames.Redis.RedisListKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexExists(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListIndexNotEqual``1(EpicGames.Redis.RedisListKey{``0},System.Int64,``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexNotEqual(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListIndexNotExists``1(EpicGames.Redis.RedisListKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListIndexNotExists(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLengthEqual``1(EpicGames.Redis.RedisListKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLengthGreaterThan``1(EpicGames.Redis.RedisListKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLengthLessThan``1(EpicGames.Redis.RedisListKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.ListLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListGetByIndexAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListGetByIndexAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListInsertAfterAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListInsertAfterAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListInsertBeforeAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListInsertBeforeAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLeftPopAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLeftPushAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLeftPushAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLeftPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListLengthAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0})">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListRangeAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRangeAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListRemoveAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListRightPopAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListRightPushAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},``0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListRightPushAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},System.Collections.Generic.IEnumerable{``0},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListRightPushAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListSetByIndexAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},System.Int64,``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListSetByIndexAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisListKeyExtensions.ListTrimAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisListKey{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.ListTrimAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisConverterAttribute">
+            <summary>
+            Attribute specifying the converter type to use for a class
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.RedisConverterAttribute.ConverterType">
+            <summary>
+            Type of the converter to use
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisConverterAttribute.#ctor(System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="converterType">The converter type</param>
+        </member>
+        <member name="T:EpicGames.Redis.IRedisConverter`1">
+            <summary>
+            Converter to and from RedisValue types
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.IRedisConverter`1.ToRedisValue(`0)">
+            <summary>
+            Serailize an object to a RedisValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.IRedisConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <summary>
+            Deserialize an object from a RedisValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EpicGames.Redis.RedisCbConverter`1">
+            <summary>
+            Redis serializer that uses compact binary to serialize objects
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisCbConverter`1.ToRedisValue(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisCbConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisJsonConverter`1">
+            <summary>
+            Redis serializer that uses JSON to serialize objects
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisJsonConverter`1.ToRedisValue(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisJsonConverter`1.FromRedisValue(StackExchange.Redis.RedisValue)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSerializer">
+            <summary>
+            Handles serialization of types to RedisValue instances
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.RegisterConverter``2">
+            <summary>
+            Register a custom converter for a particular type
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.CreateConverter``1">
+            <summary>
+            Creates a converter for a given type
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSerializer.CachedConverter`1">
+            <summary>
+            Static class for caching converter lookups
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.GetConverter``1">
+            <summary>
+            Gets the converter for a particular type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.GetObjectConverter(System.Type)">
+            <summary>
+            Gets a type converter which casts to/from an object value
+            </summary>
+            <param name="type">The concrete type for the converter</param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Serialize(System.Object,System.Type)">
+            <summary>
+            Serialize an object to a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <param name="value"></param>
+            <param name="type">Type of the object</param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Serialize``1(``0)">
+            <summary>
+            Serialize an object to a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Serialize``1(``0[])">
+            <summary>
+            Serialize an object to a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="inputs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Deserialize(StackExchange.Redis.RedisValue,System.Type)">
+            <summary>
+            Deserialize a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <param name="value"></param>
+            <param name="type">Type of the value to return</param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Deserialize``1(StackExchange.Redis.RedisValue)">
+            <summary>
+            Deserialize a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializer.Deserialize``1(StackExchange.Redis.RedisValue[])">
+            <summary>
+            Deserialize an array of <see cref="T:StackExchange.Redis.RedisValue"/> objects
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="inputs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSerializerExtensions">
+            <summary>
+            Extension methods for serialization
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializerExtensions.DeserializeAsync``1(System.Threading.Tasks.Task{StackExchange.Redis.RedisValue})">
+            <summary>
+            Deserialize a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSerializerExtensions.DeserializeAsync``1(System.Threading.Tasks.Task{StackExchange.Redis.RedisValue[]})">
+            <summary>
+            Deserialize a <see cref="T:StackExchange.Redis.RedisValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSet`1">
+            <summary>
+            Represents a typed Redis set with a given key
+            </summary>
+            <typeparam name="TElement"></typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSet`1.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{`0})">
+            <summary>
+            Represents a typed Redis set with a given key
+            </summary>
+            <typeparam name="TElement"></typeparam>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSetExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.SetContains``1(EpicGames.Redis.RedisSet{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.SetLengthEqual``1(EpicGames.Redis.RedisSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.SetLengthGreaterThan``1(EpicGames.Redis.RedisSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.SetLengthLessThan``1(EpicGames.Redis.RedisSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.SetNotContains``1(EpicGames.Redis.RedisSet{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetNotContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.AddAsync``1(EpicGames.Redis.RedisSet{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.AddAsync``1(EpicGames.Redis.RedisSet{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.ContainsAsync``1(EpicGames.Redis.RedisSet{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetContainsAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.LengthAsync``1(EpicGames.Redis.RedisSet{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.MembersAsync``1(EpicGames.Redis.RedisSet{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetMembersAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.PopAsync``1(EpicGames.Redis.RedisSet{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.PopAsync``1(EpicGames.Redis.RedisSet{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetPopAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.RandomMemberAsync``1(EpicGames.Redis.RedisSet{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRandomMemberAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.RemoveAsync``1(EpicGames.Redis.RedisSet{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.RemoveAsync``1(EpicGames.Redis.RedisSet{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetExtensions.ScanAsync``1(EpicGames.Redis.RedisSet{``0},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSetKey`1">
+            <summary>
+            Represents a typed Redis set with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKey`1.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a typed Redis set with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKey`1.op_Implicit(System.String)~EpicGames.Redis.RedisSetKey{`0}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSetKeyExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetContains``1(EpicGames.Redis.RedisSetKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetLengthEqual``1(EpicGames.Redis.RedisSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetLengthGreaterThan``1(EpicGames.Redis.RedisSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetLengthLessThan``1(EpicGames.Redis.RedisSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetNotContains``1(EpicGames.Redis.RedisSetKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SetContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetAddAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetAddAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetContainsAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetContainsAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetLengthAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetMembersAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetMembersAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetPopAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetPopAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetPopAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetRandomMemberAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRandomMemberAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetRandomMembersAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRandomMembersAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetRemoveAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetRemoveAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSetKeyExtensions.SetScanAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSetKey{``0},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SetScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSortedSet`1">
+            <summary>
+            Represents a typed Redis sorted set with a given key
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSet`1.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{`0})">
+            <summary>
+            Represents a typed Redis sorted set with a given key
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSortedSetExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetContains``1(EpicGames.Redis.RedisSortedSet{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetEqual``1(EpicGames.Redis.RedisSortedSet{``0},``0,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetLengthEqual``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetLengthGreaterThan``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetLengthLessThan``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetNotContains``1(EpicGames.Redis.RedisSortedSet{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetNotContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetNotEqual``1(EpicGames.Redis.RedisSortedSet{``0},``0,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetScoreExists``1(EpicGames.Redis.RedisSortedSet{``0},StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetScoreExists``1(EpicGames.Redis.RedisSortedSet{``0},StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.AddAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.AddAsync``1(EpicGames.Redis.RedisSortedSet{``0},EpicGames.Redis.SortedSetEntry{``0}[],StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.LengthAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetLengthAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.LengthByValueAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetLengthByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RangeByRankAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByRankAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RangeByRankWithScoresAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByRankWithScoresAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RangeByScoreAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByScoreAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.SortedSetRangeByScoreWithScoresAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByScoreWithScoresAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RangeByValueAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RankAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRankAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RemoveAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RemoveAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RemoveRangeByRankAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByRankAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RemoveRangeByScoreAsync``1(EpicGames.Redis.RedisSortedSet{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByScoreAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.RemoveRangeByValueAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.ScanAsync``1(EpicGames.Redis.RedisSortedSet{``0},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.ScoreAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetScoreAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.UpdateAsync``1(EpicGames.Redis.RedisSortedSet{``0},``0,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetUpdateAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetExtensions.UpdateAsync``1(EpicGames.Redis.RedisSortedSet{``0},EpicGames.Redis.SortedSetEntry{``0}[],StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetUpdateAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSortedSetKey`1">
+            <summary>
+            Represents a typed Redis sorted set with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKey`1.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a typed Redis sorted set with a given key
+            </summary>
+            <typeparam name="TElement">The type of element stored in the set</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKey`1.op_Implicit(System.String)~EpicGames.Redis.RedisSortedSetKey{`0}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.SortedSetEntry`1">
+            <summary>
+            Typed implementation of <see cref="T:StackExchange.Redis.SortedSetEntry"/>
+            </summary>
+            <typeparam name="T">The element type</typeparam>
+        </member>
+        <member name="P:EpicGames.Redis.SortedSetEntry`1.Element">
+            <summary>
+            Accessor for the element type
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.SortedSetEntry`1.ElementValue">
+            <summary>
+            The encoded element value
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.SortedSetEntry`1.Score">
+            <summary>
+            Score for the entry
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.#ctor(StackExchange.Redis.SortedSetEntry)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.#ctor(`0,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="element"></param>
+            <param name="score"></param>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.Deconstruct(`0@,System.Double@)">
+            <summary>
+            Deconstruct this item into a tuple
+            </summary>
+            <param name="outElement"></param>
+            <param name="outScore"></param>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.Equals(EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.CompareTo(EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.CompareTo(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_Equality(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_Inequality(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_LessThanOrEqual(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_LessThan(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_GreaterThanOrEqual(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.SortedSetEntry`1.op_GreaterThan(EpicGames.Redis.SortedSetEntry{`0},EpicGames.Redis.SortedSetEntry{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSortedSetKeyExtensions">
+            <summary>
+            Extension methods for sets
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetContains``1(EpicGames.Redis.RedisSortedSetKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetEqual``1(EpicGames.Redis.RedisSortedSetKey{``0},``0,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetLengthEqual``1(EpicGames.Redis.RedisSortedSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetLengthGreaterThan``1(EpicGames.Redis.RedisSortedSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetLengthLessThan``1(EpicGames.Redis.RedisSortedSetKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetNotContains``1(EpicGames.Redis.RedisSortedSetKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetNotContains(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetNotEqual``1(EpicGames.Redis.RedisSortedSetKey{``0},``0,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetScoreExists``1(EpicGames.Redis.RedisSortedSetKey{``0},StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetScoreExists``1(EpicGames.Redis.RedisSortedSetKey{``0},StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetAddAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetAddAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},EpicGames.Redis.SortedSetEntry{``0}[],StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetAddAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetLengthAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetLengthAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetLengthByValueAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetLengthByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRandomMemberAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRandomMemberAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRandomMembersAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRandomMemberAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRangeByRankAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByRankAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRangeByRankWithScoresAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByRankWithScoresAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRangeByScoreAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByScoreAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRangeByScoreWithScoresAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByScoreWithScoresAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRangeByValueAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRangeByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRankAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRankAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRemoveAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRemoveAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0[],StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue[],StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRemoveRangeByRankAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByRankAsync(StackExchange.Redis.RedisKey,System.Int64,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRemoveRangeByScoreAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByScoreAsync(StackExchange.Redis.RedisKey,System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetRemoveRangeByValueAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,``0,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetRemoveRangeByValueAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.Exclude,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetScanAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetScanAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetScoreAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetScoreAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetUpdateAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},``0,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetUpdateAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSortedSetKeyExtensions.SortedSetUpdateAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisSortedSetKey{``0},EpicGames.Redis.SortedSetEntry{``0}[],StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.SortedSetUpdateAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Double,StackExchange.Redis.SortedSetWhen,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisString`1">
+            <summary>
+            Accessor for a typed Redis string
+            </summary>
+            <param name="Database">Database to operate on</param>
+            <param name="Key">Key for the string</param>
+            <typeparam name="TValue">Type of element stored in the string</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisString`1.#ctor(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{`0})">
+            <summary>
+            Accessor for a typed Redis string
+            </summary>
+            <param name="Database">Database to operate on</param>
+            <param name="Key">Key for the string</param>
+            <typeparam name="TValue">Type of element stored in the string</typeparam>
+        </member>
+        <member name="P:EpicGames.Redis.RedisString`1.Database">
+            <summary>Database to operate on</summary>
+        </member>
+        <member name="P:EpicGames.Redis.RedisString`1.Key">
+            <summary>Key for the string</summary>
+        </member>
+        <member name="T:EpicGames.Redis.RedisStringExtensions">
+            <summary>
+            Extension methods for strings
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringEqual``1(EpicGames.Redis.RedisString{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringLengthEqual``1(EpicGames.Redis.RedisString{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringLengthGreaterThan``1(EpicGames.Redis.RedisString{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringLengthLessThan``1(EpicGames.Redis.RedisString{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringNotEqual``1(EpicGames.Redis.RedisString{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringDecrementAsync(EpicGames.Redis.RedisString{System.Int64},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringDecrementAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.StringDecrementAsync(EpicGames.Redis.RedisString{System.Double},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringDecrementAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.GetAsync``1(EpicGames.Redis.RedisString{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.GetAsync``1(EpicGames.Redis.RedisString{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.IncrementAsync(EpicGames.Redis.RedisString{System.Int64},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringIncrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.LengthAsync``1(EpicGames.Redis.RedisString{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringExtensions.SetAsync``1(EpicGames.Redis.RedisString{``0},``0,System.Nullable{System.TimeSpan},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Nullable{System.TimeSpan},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisStringKey`1">
+            <summary>
+            Represents a typed Redis string with a given value type
+            </summary>
+            <typeparam name="TValue">The type of element stored in the list</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKey`1.#ctor(StackExchange.Redis.RedisKey)">
+            <summary>
+            Represents a typed Redis string with a given value type
+            </summary>
+            <typeparam name="TValue">The type of element stored in the list</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKey`1.op_Implicit(System.String)~EpicGames.Redis.RedisStringKey{`0}">
+            <summary>
+            Implicit conversion to typed redis key.
+            </summary>
+            <param name="key">Key to convert</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisStringKeyExtensions">
+            <summary>
+            Extension methods for strings
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringEqual``1(EpicGames.Redis.RedisStringKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringLengthEqual``1(EpicGames.Redis.RedisStringKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthEqual(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringLengthGreaterThan``1(EpicGames.Redis.RedisStringKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthGreaterThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringLengthLessThan``1(EpicGames.Redis.RedisStringKey{``0},System.Int64)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringLengthLessThan(StackExchange.Redis.RedisKey,System.Int64)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringNotEqual``1(EpicGames.Redis.RedisStringKey{``0},``0)">
+            <inheritdoc cref="M:StackExchange.Redis.Condition.StringNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringDecrementAsync(StackExchange.Redis.IDatabaseAsync,StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringDecrementAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringDecrementAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{System.Int64},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringDecrementAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringDecrementAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{System.Double},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringDecrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringGetAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringGetAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{``0},``0,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringGetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringIncrementAsync(StackExchange.Redis.IDatabaseAsync,StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringIncrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringIncrementAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{System.Int64},System.Int64,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringIncrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringIncrementAsync(StackExchange.Redis.IDatabaseAsync,StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringIncrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringIncrementAsync(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{System.Double},System.Double,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringIncrementAsync(StackExchange.Redis.RedisKey,System.Double,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringLengthAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringLengthAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringSetAsync``1(StackExchange.Redis.IDatabaseAsync,EpicGames.Redis.RedisStringKey{``0},``0,System.Nullable{System.TimeSpan},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Nullable{System.TimeSpan},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisStringKeyExtensions.StringSetAsync``1(StackExchange.Redis.IDatabaseAsync,System.Collections.Generic.KeyValuePair{EpicGames.Redis.RedisStringKey{``0},``0}[],StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.IDatabaseAsync.StringSetAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,System.Nullable{System.TimeSpan},StackExchange.Redis.When,StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSubscription">
+            <summary>
+            Subscription to a <see cref="T:StackExchange.Redis.RedisChannel"/>
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.RedisSubscription.Channel">
+            <summary>
+            Accessor for the channel
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscription.#ctor(StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="channel">The channel that is subscribed to</param>
+            <param name="handler">Callback method</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscription.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscription.DisposeAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscription.SubscribeAsync(StackExchange.Redis.ISubscriber,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Subscribes to the channel
+            </summary>
+            <param name="subscriber">Connection to use for the subscription</param>
+            <param name="flags">Flags for the operation</param>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscription.UnsubscribeAsync(StackExchange.Redis.CommandFlags)">
+            <summary>
+            Unsubscribe from the channel
+            </summary>
+            <param name="flags">Flags for the operation</param>
+        </member>
+        <member name="T:EpicGames.Redis.RedisSubscriptionExtensions">
+            <summary>
+            Extension methods for typed lists
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscriptionExtensions.SubscribeAsync(StackExchange.Redis.IConnectionMultiplexer,StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.ISubscriber.SubscribeAsync(StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscriptionExtensions.SubscribeAsync(StackExchange.Redis.IConnectionMultiplexer,StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.ISubscriber.SubscribeAsync(StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscriptionExtensions.SubscribeAsync``1(StackExchange.Redis.IConnectionMultiplexer,EpicGames.Redis.RedisChannel{``0},System.Action{``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.ISubscriber.SubscribeAsync(StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisSubscriptionExtensions.SubscribeAsync``1(StackExchange.Redis.IConnectionMultiplexer,EpicGames.Redis.RedisChannel{``0},System.Action{EpicGames.Redis.RedisChannel{``0},``0},StackExchange.Redis.CommandFlags)">
+            <inheritdoc cref="M:StackExchange.Redis.ISubscriber.SubscribeAsync(StackExchange.Redis.RedisChannel,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue},StackExchange.Redis.CommandFlags)"/>
+        </member>
+        <member name="T:EpicGames.Redis.RedisEvent">
+            <summary>
+            Distributed version of <see cref="T:EpicGames.Core.AsyncEvent"/>. The event will be pulsed via a pub/sub channel in Redis.
+            </summary>
+        </member>
+        <member name="P:EpicGames.Redis.RedisEvent.Task">
+            <summary>
+            Accessor for the inner task. Can be captured and awaited by clients.
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.RedisEvent.DisposeAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.RedisEvent.CreateAsync(StackExchange.Redis.IConnectionMultiplexer,StackExchange.Redis.RedisChannel,System.Threading.CancellationToken)">
+            <summary>
+            Create a new async event using the given channel name
+            </summary>
+            <param name="multiplexer">Multiplexer for the </param>
+            <param name="channel">Channel for posting event updates</param>
+            <param name="cancellationToken">Cancellation token for the operation</param>
+            <returns></returns>
+        </member>
+        <member name="M:EpicGames.Redis.RedisEvent.Pulse">
+            <summary>
+            Pulse the event, allowing any captured copies of the task to continue.
+            </summary>
+        </member>
+        <member name="T:EpicGames.Redis.Utility.RedisLock">
+            <summary>
+            Implements a named single-entry lock which expires after a period of time if the process terminates.
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.#ctor(StackExchange.Redis.IDatabase,StackExchange.Redis.RedisKey)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="database"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.DisposeAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.AcquireAsync(System.TimeSpan,System.Boolean)">
+            <summary>
+            Attempts to acquire the lock for the given period of time. The lock will be renewed once half of this interval has elapsed.
+            </summary>
+            <param name="duration">Time after which the lock expires</param>
+            <param name="releaseOnDispose">Whether the lock should be released when disposed. If false, the lock will be held for the given time, but not renewed once disposed.</param>
+            <returns>True if the lock was acquired, false if another service already has it</returns>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock.RenewAsync(System.TimeSpan,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Background task which renews the lock while the service is running
+            </summary>
+            <param name="duration"></param>
+            <param name="releaseOnDispose">Whether the lock should be released when the cancellation token is fired</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EpicGames.Redis.Utility.RedisLock`1">
+            <summary>
+            Implements a named single-entry lock which expires after a period of time if the process terminates.
+            </summary>
+            <typeparam name="T">Type of the value identifying the lock uniqueness</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisLock`1.#ctor(StackExchange.Redis.IDatabase,StackExchange.Redis.RedisKey,`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="database"></param>
+            <param name="baseKey"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:EpicGames.Redis.Utility.RedisQueue">
+            <summary>
+            Utility method for queue instances
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisQueue.CreateAsync``1(StackExchange.Redis.IConnectionMultiplexer,StackExchange.Redis.RedisKey,StackExchange.Redis.RedisChannel,System.Threading.CancellationToken)">
+            <summary>
+            Create a new queue instance
+            </summary>
+            <param name="multiplexer">Multiplexer for the connection</param>
+            <param name="queueKey">Key for the queue</param>
+            <param name="eventChannel">Channel to use for posting update notifications</param>
+            <param name="cancellationToken">Cancellation token for the operation</param>
+        </member>
+        <member name="T:EpicGames.Redis.Utility.RedisQueue`1">
+            <summary>
+            Implements a waitable FIFO queue with Redis. Wraps a pub/sub channel and list, ensuring that each item is only popped from the queue once.
+            </summary>
+            <typeparam name="T">Type of item in the queue</typeparam>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisQueue`1.DisposeAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisQueue`1.PushAsync(`0,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Push a new item onto the queue
+            </summary>
+            <param name="item">Item to add to the queue</param>
+            <param name="flags">Flags for the push operation</param>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisQueue`1.TryPopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Attempt to pop an item from the front of the queue. Returns the default value for the item if the queue is empty.
+            </summary>
+        </member>
+        <member name="M:EpicGames.Redis.Utility.RedisQueue`1.WaitForDataAsync(System.Threading.CancellationToken)">
+            <summary>
+            Wait for a new item to be pushed onto the queue
+            </summary>
+            <param name="cancellationToken">Cancellation token for the operation</param>
+        </member>
+    </members>
+</doc>

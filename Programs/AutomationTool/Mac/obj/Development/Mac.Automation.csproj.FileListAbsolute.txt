@@ -1,0 +1,56 @@
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinux64.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinuxarm32.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinuxarm64.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2coremac64.2.9.10.dylib
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_win64.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_win32.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_winuwparm64.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\MSVCP140.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\VCRUNTIME140.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\VCRUNTIME140_1.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.so
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.dylib
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-x64\native\UbaHost.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-x64\native\UbaDetours.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-arm64\native\UbaHost.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-arm64\native\UbaDetours.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.deps.json
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\ref\Mac.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.pdb
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.csproj.AssemblyReference.cache
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.csproj.CoreCompileInputs.cache
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Auto.F9041C0A.Up2Date
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\refint\Mac.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.pdb
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinux64.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinuxarm32.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2corelinuxarm64.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\liboo2coremac64.2.9.10.dylib
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_win64.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_win32.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\oo2core_9_winuwparm64.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\MSVCP140.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\VCRUNTIME140.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\VCRUNTIME140_1.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.so
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\EpicGames.Perforce.Native.dylib
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-x64\native\UbaHost.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-x64\native\UbaDetours.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-arm64\native\UbaHost.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\runtimes\win-arm64\native\UbaDetours.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.deps.json
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\ref\Mac.Automation.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Mac\Mac.Automation.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.csproj.AssemblyReference.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.csproj.CoreCompileInputs.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Auto.F9041C0A.Up2Date
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\refint\Mac.Automation.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Mac\obj\Development\Mac.Automation.pdb

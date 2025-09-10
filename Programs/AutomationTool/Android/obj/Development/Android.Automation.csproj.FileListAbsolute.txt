@@ -1,0 +1,56 @@
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinux64.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinuxarm32.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinuxarm64.so.9
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2coremac64.2.9.10.dylib
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_win64.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_win32.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_winuwparm64.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\MSVCP140.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\VCRUNTIME140.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\VCRUNTIME140_1.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.so
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.dylib
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-x64\native\UbaHost.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-x64\native\UbaDetours.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-arm64\native\UbaHost.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-arm64\native\UbaDetours.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.deps.json
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\ref\Android.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.pdb
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.csproj.AssemblyReference.cache
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.csproj.CoreCompileInputs.cache
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android..A7319424.Up2Date
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\refint\Android.Automation.dll
+C:\Program Files\Epic Games\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.pdb
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinux64.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinuxarm32.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2corelinuxarm64.so.9
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\liboo2coremac64.2.9.10.dylib
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_win64.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_win32.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\oo2core_9_winuwparm64.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\MSVCP140.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\VCRUNTIME140.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\VCRUNTIME140_1.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.so
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\EpicGames.Perforce.Native.dylib
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-x64\native\UbaHost.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-x64\native\UbaDetours.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-arm64\native\UbaHost.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\runtimes\win-arm64\native\UbaDetours.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.deps.json
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\ref\Android.Automation.dll
+C:\UnrealEngine-5.5\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Platforms\Android\Android.Automation.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.csproj.AssemblyReference.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.csproj.CoreCompileInputs.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android..A7319424.Up2Date
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\refint\Android.Automation.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\AutomationTool\Android\obj\Development\Android.Automation.pdb

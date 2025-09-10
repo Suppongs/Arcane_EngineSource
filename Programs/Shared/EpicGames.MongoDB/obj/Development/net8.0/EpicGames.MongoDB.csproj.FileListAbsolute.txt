@@ -1,0 +1,10 @@
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\bin\Development\net8.0\EpicGames.MongoDB.deps.json
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\bin\Development\net8.0\EpicGames.MongoDB.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\bin\Development\net8.0\EpicGames.MongoDB.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\EpicGames.MongoDB.csproj.AssemblyReference.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\EpicGames.MongoDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\EpicGames.MongoDB.csproj.CoreCompileInputs.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\EpicGames.MongoDB.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\refint\EpicGames.MongoDB.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\EpicGames.MongoDB.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.MongoDB\obj\Development\net8.0\ref\EpicGames.MongoDB.dll

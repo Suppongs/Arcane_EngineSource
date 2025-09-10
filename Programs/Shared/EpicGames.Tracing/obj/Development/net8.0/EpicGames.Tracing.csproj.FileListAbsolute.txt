@@ -1,0 +1,9 @@
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\bin\Development\net8.0\EpicGames.Tracing.deps.json
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\bin\Development\net8.0\EpicGames.Tracing.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\bin\Development\net8.0\EpicGames.Tracing.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\EpicGames.Tracing.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\EpicGames.Tracing.csproj.CoreCompileInputs.cache
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\EpicGames.Tracing.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\refint\EpicGames.Tracing.dll
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\EpicGames.Tracing.pdb
+C:\UnrealEngine-5.5\Engine\Source\Programs\Shared\EpicGames.Tracing\obj\Development\net8.0\ref\EpicGames.Tracing.dll
